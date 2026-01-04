@@ -1,11 +1,11 @@
-import React, { type FC } from "react";
+import { type ChangeEvent, type FC } from "react";
 import SliderRow from "./SliderRow";
 import { useBoard } from "../../hooks/useBoard";
 
 const Controls: FC = () => {
   const { img, setImg, setImgW, setImgH } = useBoard();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 

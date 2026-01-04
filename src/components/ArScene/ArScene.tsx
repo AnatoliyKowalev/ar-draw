@@ -1,4 +1,4 @@
-import React, { type FC } from "react";
+import { type FC } from "react";
 import { useBoard } from "../../hooks/useBoard";
 
 const ArScene: FC = () => {

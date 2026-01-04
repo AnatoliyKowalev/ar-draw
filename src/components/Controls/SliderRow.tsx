@@ -1,4 +1,4 @@
-import React, { useCallback, type FC, type FormEvent } from "react";
+import { useCallback, type FC, type FormEvent } from "react";
 import { DEFAULT_CONFIG } from "../../contexts/boardContext/constants";
 import { useBoard } from "../../hooks/useBoard";
 
