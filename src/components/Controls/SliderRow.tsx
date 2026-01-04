@@ -1,5 +1,6 @@
 import React, { useCallback, type FC, type FormEvent } from "react";
-import { DEFAULT_CONFIG, useBoard } from "../../contexts/boardContext";
+import { DEFAULT_CONFIG } from "../../contexts/boardContext/constants";
+import { useBoard } from "../../hooks/useBoard";
 
 interface SliderRowProps {
   type: TypeSlider;
@@ -24,42 +25,57 @@ const SliderRow: FC<SliderRowProps> = ({
   max = "10",
   step = "0.01",
 }) => {
-  const { config, changeConfig } = useBoard();
+  const { config, setConfig } = useBoard();
 
   const value = config[type];
 
   const handleChange = useCallback(
-    (e: FormEvent<HTMLInputElement>) => {
-      changeConfig({
+    (e: FormEvent<HTMLInputElement>) =>
+      setConfig((prev) => ({
+        ...prev,
         [type]: +e.currentTarget.value,
-      });
-    },
-    [type]
+      })),
+    [setConfig, type]
   );
 
   const handleReset = useCallback(
     () =>
-      changeConfig({
+      setConfig((prev) => ({
+        ...prev,
         [type]: DEFAULT_CONFIG[type],
-      }),
-    [type]
+      })),
+    [setConfig, type]
   );
 
-  const handleIncrement = useCallback(
-    () =>
-      changeConfig({
-        [type]: Number((config[type] + 0.1).toFixed(2)),
-      }),
-    [config, type]
-  );
+  // const handleIncrement = useCallback(
+  //   () =>
+  //     changeConfig({
+  //       [type]: Number((config[type] + 0.1).toFixed(2)),
+  //     }),
+  //   [config, type]
+  // );
 
-  const handleDecrement = useCallback(
-    () =>
-      changeConfig({
-        [type]: Number((config[type] - 0.1).toFixed(2)),
-      }),
-    [config, type]
-  );
+  // const handleDecrement = useCallback(
+  //   () =>
+  //     changeConfig({
+  //       [type]: Number((config[type] - 0.1).toFixed(2)),
+  //     }),
+  //   [config, type]
+  // );
+
+  const handleIncrement = useCallback(() => {
+    setConfig((prev) => ({
+      ...prev,
+      [type]: Number((prev[type] + 0.1).toFixed(2)),
+    }));
+  }, [setConfig, type]);
+
+  const handleDecrement = useCallback(() => {
+    setConfig((prev) => ({
+      ...prev,
+      [type]: Number((prev[type] - 0.1).toFixed(2)),
+    }));
+  }, [setConfig, type]);
 
   return (
     <div>

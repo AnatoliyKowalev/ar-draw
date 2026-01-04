@@ -1,5 +1,5 @@
-import React, { useState, type FC } from "react";
-import { useBoard } from "../../contexts/boardContext";
+import React, { type FC } from "react";
+import { useBoard } from "../../hooks/useBoard";
 
 const ArScene: FC = () => {
   const { img, imgW, imgH, config } = useBoard();

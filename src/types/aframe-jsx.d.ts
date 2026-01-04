@@ -7,31 +7,31 @@ declare module "react" {
         React.HTMLAttributes<HTMLElement>,
         HTMLElement
       > & {
-        [key: string]: any;
+        [key: string]: unknown;
       };
       "a-entity": React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLElement>,
         HTMLElement
       > & {
-        [key: string]: any;
+        [key: string]: unknown;
       };
       "a-marker": React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLElement>,
         HTMLElement
       > & {
-        [key: string]: any;
+        [key: string]: unknown;
       };
       "a-image": React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLElement>,
         HTMLElement
       > & {
-        [key: string]: any;
+        [key: string]: unknown;
       };
       "a-box": React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLElement>,
         HTMLElement
       > & {
-        [key: string]: any;
+        [key: string]: unknown;
       };
     }
   }

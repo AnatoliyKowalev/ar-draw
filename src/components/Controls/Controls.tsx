@@ -1,6 +1,6 @@
 import React, { type FC } from "react";
-import { useBoard } from "../../contexts/boardContext";
 import SliderRow from "./SliderRow";
+import { useBoard } from "../../hooks/useBoard";
 
 const Controls: FC = () => {
   const { img, setImg, setImgW, setImgH } = useBoard();

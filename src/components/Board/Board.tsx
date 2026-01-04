@@ -1,8 +1,8 @@
 import React, { type FC } from "react";
 
 import ArScene from "../ArScene";
-import { BoardProvider } from "../../contexts/boardContext";
 import Controls from "../Controls";
+import { BoardProvider } from "../../contexts/boardContext/BoardProvider";
 
 const Board: FC = () => {
   return (
