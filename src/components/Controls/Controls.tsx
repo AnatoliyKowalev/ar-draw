@@ -42,7 +42,7 @@ const Controls: FC = () => {
   return (
     <div
       id="controls"
-      className="fixed bottom-0 left-0 w-full px-5 py-2 bg-white shadow-lg rounded-t-[10px] flex gap-4 items-center justify-center [&>label]:cursor-pointer overflow-auto"
+      className="fixed bottom-0 left-0 w-full px-5 py-2 bg-white rounded-t-[10px] flex gap-4 items-center justify-center [&>label]:cursor-pointer overflow-auto shadow-[0_4px_30px_-10px_rgba(0,0,0,0.45)]"
     >
       {img ? (
         <>
@@ -54,38 +54,12 @@ const Controls: FC = () => {
           <SliderRow type="rotX" min="-180" max="180" />
           <SliderRow type="rotY" min="-180" max="180" />
           <SliderRow type="rotZ" min="-180" max="180" />
-
-          {/* <label>
-            Opacity: <span id="opacity-value">0.8</span>
-            <div className="slider-row">
-              <button
-                className="step-btn"
-                data-target="opacity-slider"
-                data-dir="-"
-              >
-                −
-              </button>
-              <input
-                type="range"
-                id="opacity-slider"
-                min="0"
-                max="1"
-                step="0.01"
-                value="0.8"
-              />
-              <button
-                className="step-btn"
-                data-target="opacity-slider"
-                data-dir="+"
-              >
-                +
-              </button>
-            </div>
-          </label>  */}
         </>
       ) : (
-        <label className="font-bold text-[green] text-center">
-          Pick image
+        <label className="">
+          <div className="font-bold text-center flex items-center justify-center rounded-2xl border-2 border-dashed border-zinc-300 bg-zinc-50 text-zinc-500 transition-colors duration-200 px-4 py-2">
+            Pick image
+          </div>
           <input
             type="file"
             accept="image/*"
